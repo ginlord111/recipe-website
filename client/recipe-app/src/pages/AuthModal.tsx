@@ -10,15 +10,12 @@ const AuthModal = () => {
       return onClose()
     }
   }
-  const handleClick = () =>{
-    navigate('/login')
-    return onClose()
-  }
+
   return (
     <div className='overflow-hidden truncate z-[800]'>
       <Modal title='You must Login First' description = 'Login your Account' isOpen={isOpen} onChange={onChange}>
         <div className='flex gap-y-2 flex-col'>
-          <button className='bg-blue-500 text-lg rounded-md font-semibold' onClick={handleClick}>Login</button>
+           <a className='bg-blue-500 text-lg rounded-md font-semibold text-center' href='/login'>Login</a>
           <a href="/register" className='text-sm text-gray-500 text-center underline'>Dont Have Account? Register Here</a>
         </div>
       </Modal>

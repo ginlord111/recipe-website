@@ -6,8 +6,8 @@ interface AuthenticationProps{
 }
 const Authentcation:React.FC<AuthenticationProps> = ({children, src}) => {
   return (
-    <div className="flex w-screen h-screen relative mt-16 justify-center">
-    <div className="w-[70%] h-[80%] rounded-lg relative mt-[60px] flex shadow-2xl">
+    <div className="flex w-screen h-screen  absolute mt-16 justify-center z-[-1] ">
+    <div className="w-[70%] h-[80%] rounded-lg relative mt-[60px] flex shadow-2xl ">
       <div className="relative flex-[0.50]">
         <img
          src={src}
@@ -16,7 +16,7 @@ const Authentcation:React.FC<AuthenticationProps> = ({children, src}) => {
         />
       </div>
 
-      <div className="relative flex-[0.50] h-full w-full">
+      <div className="relative flex-[0.50] h-full w-full  ">
        {children}
       </div>
     </div>

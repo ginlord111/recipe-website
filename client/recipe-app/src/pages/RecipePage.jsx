@@ -10,7 +10,7 @@ function RecipePage() {
       <div className="flex items-center justify-center relative">
         <div className="md:w-[50%] lg:flex gap-x-10 w-full sm:flex sm:flex-row">
           <div className="flex flex-col w-full">
-          <img src={recipe.imageUrl} alt="" className="w-full md:w-[50vh] lg:w-auto " />
+          <img src={recipe.imageUrl} alt="" className="w-full md:w-[50vh] lg:w-auto rounded-lg" />
             <div className="mt-[100px] flex flex-col gap-[12px] items-center lg:items-start">
             <h3 className="bg-red-800 w-fit p-1 rounded-md font-semibold text-white">Cooking Time</h3>
             <p className="font-bold">{recipe.cookingTime} minutes</p>

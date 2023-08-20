@@ -47,6 +47,7 @@ function CreateRecipe() {
   };
 
   const noUser = () => {
+    if(!cookies.access_token){
     return (
       <h3
         style={{ color: "black", position: "relative" }}
@@ -55,21 +56,23 @@ function CreateRecipe() {
         LOG IN FIRST BEFORE CREATING RECIPE
       </h3>
     );
+    }
+    return;
   };
 
   return (
-    <>
-      {!cookies.access_token ? (
-        noUser()
-      ) : (
-        <div className="create-recipe">
-          <h2 className="text-2xl  font-bold w-full text-start max-w-[25%]">
+        <div className="create-recipe z-[-1] absolute w-full  justify-center p-2">
+          {noUser}
+          <div className=" flex flex-col max-w-[100%] text-sm p-1 md:p-0 md:text-base">
+          <h2 className="text-2xl  font-bold w-full text-center md:text-start mb-5">
             Create Your Own Recipe
           </h2>
-          <form action="" onSubmit={handleSubmit}>
-            <img src={recipe.imageUrl} />
+            <img src={recipe.imageUrl} className="w-[200px] md:w-[250px] m-auto md:m-0" />
+          <form action="" onSubmit={handleSubmit} className="">
+          
             <label htmlFor="imageUrl">Paste Your Image URL Here</label>
             <input
+            required
               type="text"
               id="imageUrl"
               name="imageUrl"
@@ -80,6 +83,7 @@ function CreateRecipe() {
             <label htmlFor="ingredients">Ingredients</label>
             {recipe.ingredients.map((ingredient, index) => (
               <input
+              required
                 value={ingredient}
                 key={index}
                 name="ingredients"
@@ -91,13 +95,14 @@ function CreateRecipe() {
             <button
               onClick={addIngredients}
               type="button"
-              className="p-5 bg-black rounded-lg text-base text-white hover:opacity-[0.90] transition"
+              className=" bg-black  rounded-lg text-sm md:text-base text-white hover:opacity-[0.90] transition"
             >
               Add Ingredients
             </button>
 
             <label htmlFor="instructions">Instructions:</label>
             <textarea
+            required
               name="instructions"
               id="instructions"
               onChange={handleChange}
@@ -105,6 +110,7 @@ function CreateRecipe() {
 
             <label htmlFor="cookingTime">Cooking Time (minutes)</label>
             <input
+            required
               type="number"
               id="cookingTime"
               name="cookingTime"
@@ -112,14 +118,15 @@ function CreateRecipe() {
             />
             <button
               type="submit"
-              className="m-auto mt-[30px] p-5 bg-green-700/90 rounded-lg w-full font-medium text-white hover:opacity-[0.90] transition truncate"
+              className="m-auto mt-[50px] p-5 bg-green-700/90 rounded-lg w-full font-medium text-white hover:opacity-[0.90] transition truncate"
             >
               Create Recipe
             </button>
           </form>
         </div>
-      )}
-    </>
+        </div>
+     
+    
   );
 }
 

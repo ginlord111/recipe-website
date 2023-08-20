@@ -48,7 +48,7 @@ function Home() {
                   className="h-full rounded-lg"
                 />
                 <div className="contents">
-                  <h3>{recipe.name}</h3>
+                  <h3 className="font-semibold p-1">{recipe.name}</h3>
                 </div>
               </div>
             </Link>
