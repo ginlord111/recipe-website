@@ -6,7 +6,7 @@ function Form({username, setUsername, setPassword, password, label, onSubmit}) {
     <div className='form-group h-full w-full flex  justify-center flex-col'>
         <h1 className='font-bold text-3xl text-slate-800'>{label}</h1>
     <form action="" onSubmit={onSubmit} className='flex flex-col  '>
-      <div className='flex flex-col  '>
+      <div className='flex flex-col sm:text-base text-sm '>
         <div className='flex flex-col p-20'>
         <label htmlFor="username" className='text-lg font-semibold'>Username:</label>
         <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} placeholder='juandelacruz@yahoo.com' className=' p-5 h-[40px] border-[1px] border-gray-300 rounded-sm'/>
