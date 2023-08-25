@@ -13,9 +13,9 @@ function Profile() {
     const getRecipe = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/profile${userID}`
+          `https://recipe-app-lhfe.onrender.com/recipes/profile${userID}`
         );
-
+            //  `http://localhost:3001/recipes/profile${userID}`
         setUserRecipe(response.data);
       } catch (err) {
         console.log(err);
@@ -55,9 +55,10 @@ function Profile() {
       );
   
       const response = await axios.put(
-        `http://localhost:3001/recipes/editRecipe${id}`,
+        `https://recipe-app-lhfe.onrender.com/recipes/editRecipe${id}`,
         updatedRecipe
       );
+      // localhost:3001/recipes/editRecipe${id}
   
       alert('EDIT SUCCESSFULLY');
       setDisabledRecipes(disable => !disable);

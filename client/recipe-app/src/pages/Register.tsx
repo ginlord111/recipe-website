@@ -15,7 +15,7 @@ function Register() {
     e.preventDefault();
 
     try {
-   const response=  await axios.post("http://localhost:3001/auth/register", {
+   const response=  await axios.post("https://recipe-app-lhfe.onrender.com/auth/register", {
         username,
         password,
       });

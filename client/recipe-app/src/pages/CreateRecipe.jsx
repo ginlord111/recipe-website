@@ -37,7 +37,7 @@ function CreateRecipe() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("http://localhost:3001/recipes", recipe);
+      await axios.post("https://recipe-app-lhfe.onrender.com/recipes", recipe);
       alert("SUCCESFULLY CREATED RECIPE");
       navigate("/");
     } catch (err) {
